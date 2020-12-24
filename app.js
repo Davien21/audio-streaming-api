@@ -45,6 +45,10 @@ app.get("/api/audio/:id", (req, res) => {
   }
 });
 
+app.get("*", (req, res) => {
+  res.send({...error, message: "This is not a valid route"})
+})
+
 app.use(express.json())
 
 app.listen(port, () => {
