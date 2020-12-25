@@ -50,8 +50,8 @@ app.get("*", (req, res) => {
   res.send({...error, message: "This is not a valid route"})
 })
 
-app.use(express.json())
 app.use(cors())
+app.use(express.json())
 
 app.listen(port, () => {
   console.log(`Server is running on port ${port}`);
