@@ -37,6 +37,7 @@ app.get("/api/audio/:id", (req, res) => {
     file.pipe(res);
   } else {
     const head = {
+      "Content-Range": `10000`,
       "Content-Length": fileSize,
       "Content-Type": `${fileContentType}`,
     };
